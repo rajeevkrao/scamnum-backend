@@ -27,11 +27,9 @@ app.use(express.static('dist'))
 }); */
 
 app.get('/api/getnums',async(req,res)=>{
+    console.log("ORIGIN: ",req.get('host'))
     res.json(await mongo.getnums())
 })
-
-
-
 
 app.listen(5000,()=>{
     console.log("Site is Online")
